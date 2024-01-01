@@ -15,11 +15,28 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <img :src="lk" alt="" style="width: 100vw; height: 100vh;" />
+  <div class="container">
+    <img :src="lk" alt="" />
+  </div>
   <div class="answer">{{ answer }}</div>
 </template>
 
 <style scoped>
+.container {
+  width: 100%;
+  height: 100vh;
+  /* padding-bottom: 100%; */
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes bounce {
   0% {
     /* transform: translateY(0); */
@@ -43,10 +60,11 @@ onBeforeMount(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5rem;
+  font-size: 6rem;
   color: white;
   text-shadow: 0 0 10px black;
-  animation-name: bounce;
-  animation-duration: 1.5s;
+  /* animation-name: bounce;
+  animation-duration: 1.5s; */
+  animation: bounce 1.5s 3;
 }
 </style>
