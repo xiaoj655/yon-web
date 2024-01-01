@@ -2,7 +2,7 @@
 import axios from 'axios'
 import { onBeforeMount, ref } from 'vue';
 
-const lk = ref()
+const lk = ref('')
 const answer = ref()
 onBeforeMount(() => {
   axios.get('https://yesno.wtf/api').then(res => {
@@ -28,6 +28,7 @@ onBeforeMount(() => {
   /* padding-bottom: 100%; */
   position: relative;
   overflow: hidden;
+  background-image: url(/loading.gif);
 }
 
 img {
