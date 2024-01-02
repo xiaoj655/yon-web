@@ -11,7 +11,6 @@ onBeforeMount(() => {
     answer.value = res.data.answer
   })
 })
-
 </script>
 
 <template>
@@ -19,9 +18,29 @@ onBeforeMount(() => {
     <img :src="lk" alt="" />
   </div>
   <div class="answer">{{ answer }}</div>
+  <footer>
+    <div>Powered By <em>brook.today</em></div>
+    <div>Thanks to <em>yesno.wtf</em></div>
+  </footer>
 </template>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 0.5rem 2rem;
+  justify-content: space-between;
+}
+
 .container {
   width: 100%;
   height: 100vh;
