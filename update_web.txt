@@ -1,0 +1,5 @@
+  659  git pull
+  660  npm run build
+  661  rm -r /var/www/yon_web/*
+  662  mv dist/* /var/www/yon_web
+  663  nginx -s reload
