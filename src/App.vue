@@ -1,6 +1,6 @@
 <script setup>
 import axios from 'axios'
-import { onBeforeMount, ref } from 'vue';
+import { onBeforeMount, onMounted, ref, watch, watchEffect } from 'vue';
 
 const lk = ref('')
 const answer = ref()
@@ -11,6 +11,17 @@ onBeforeMount(() => {
     answer.value = res.data.answer
   })
 })
+
+// const w = window.innerWidth
+// const footerRef = ref()
+// watchEffect(() => {
+//   if (footerRef.value) {
+//     if (w < 650) {
+//       console.log(footerRef)
+//       footerRef.value.style.fontSize = '1rem'
+//     }
+//   }
+// })
 </script>
 
 <template>
@@ -18,7 +29,7 @@ onBeforeMount(() => {
     <img :src="lk" alt="" />
   </div>
   <div class="answer">{{ answer }}</div>
-  <footer>
+  <footer ref="footerRef">
     <div>Powered By <em>brook.today</em></div>
     <div>Thanks to <em>yesno.wtf</em></div>
   </footer>
@@ -34,7 +45,7 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1rem;
   color: white;
   background-color: rgba(0, 0, 0, .5);
   padding: 0.5rem 2rem;
